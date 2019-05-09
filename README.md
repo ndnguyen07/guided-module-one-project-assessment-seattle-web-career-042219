@@ -44,7 +44,7 @@ A project by DaNeil Coulthard and Dang Nguyen
 
 Welcome Page TV ASCII art taken from: http://patorjk.com
 
-Gems Used: https://rubygems.org
+## Gems Used: https://rubygems.org
 - gem "sinatra-activerecord"
 - gem "rest-client"
 - gem "sqlite3"
