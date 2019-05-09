@@ -15,13 +15,13 @@
                            __/ |
                           |___/
 ```
-#Welcome to the Cocktail Listing Project!
+## Welcome to the Cocktail Listing Project!
 We are going to gets some drinks going to please select
 from the options available below to get started...
 
 Cocktails are sourced from the Cocktail Database: http://www.thecocktaildb.com/api.php
 
-##Navigating the Program
+## Navigating the Program
 To run this app run 'ruby bin/run.rb' from command line folder to receive
  cocktail recipes delivered into your command line.
 
