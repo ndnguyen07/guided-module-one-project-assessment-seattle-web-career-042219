@@ -33,9 +33,9 @@ def getting_recipe(drink_name)
 
   ingredients = []
   measurments = []
-  instructions = info['strInstructions']
+  instructions = []
   
-  ingredients + measurments
+  instructions << info["strInstructions"].gsub(/\r\n?/, "");
 
   info.each {|group,spec|
     if group.include?("Ingredient")
@@ -46,7 +46,9 @@ def getting_recipe(drink_name)
       measurments << spec
     end
   }
-  return ingredients, measurments, instructions
+  puts "Ingredients: #{ingredients}"
+  puts "Measurments: #{measurments}"
+  puts "Instructions: #{instructions}".strip.chomp
 end
 
 print getting_recipe("margarita")
