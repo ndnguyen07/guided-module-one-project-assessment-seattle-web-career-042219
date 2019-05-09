@@ -36,15 +36,8 @@ These are the key features and functionality built into the program:
 - Search for drink ingredients and instructions to make based on its name
 
 ## Demo
-<!-- You can see a video demo of our program at the directory below
-app/assets/demo/mod1_project_demo.mov -->
-
-## Next Steps
- User Profile page showing statistics
-List of start dates for user's favorite shows
-Which network does a user favorite the most?
-What shows are most favorited?
-Upload profile pic and convert to ASCII art
+You can see a video demo of our program at the directory below
+http://www....
 
 ## Credits
 A project by DaNeil Coulthard and Dang Nguyen
