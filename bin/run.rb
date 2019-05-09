@@ -52,9 +52,11 @@ def option
     #will accept a liqupr type and display the available drinks to make
     #where the user can accept one to see the ingredients
     puts "Input Liquor type:"
-    liquor_type = gets.chomp.to_s
-    search_by_name(liquor_type)
-    # get_ingredient
+    liquor_type = gets.chomp
+    gets_drink_by_liquor(liquor_type)
+    puts " "
+    option
+    puts ""
 
   when 2
     puts "You random drink is the..."
@@ -62,12 +64,12 @@ def option
     # puts "Save drink?"
     # User.like_drink(randomdrink)
     puts ""
-    # option
+    option
     puts ""
+
   when 3
     puts "Know the name of the drink you want?"
-    drink_name = gets.chomp.to_s
-    getting_recipe(drink_name)
+    drink_name = gets.chomp
 
 
   when 0 || 'exit'
@@ -104,19 +106,31 @@ def random_drink
     drink_name  = drink_data[0][1]
     drink_type  = drink_data[0][21...28].each do |data|
        if data != nil || data != ""
-        # drink_listing.push(item)#item
         data
       end
 data
     end
     "Your drink is #{drink_name} and is made from #{drink_type}"
-    # "It is #{drink_type}"
   # drink_listing
   end
   puts get_ingredient
   #option to save it to a list???
 end
 
+def gets_drink_by_liquor(liquor_type)
+  drinks_list = search_by_name(liquor_type)
+  drinks_list.each do|drink|
+      drink.map do |key, value|
+        if key == 'strDrink'
+          print "#{value}, "
+        end
+      end
+  end
+end
 
+# def gets_drink_by_name(drink_name)
+#   getting_recipe(drink_name)
+#
+# end
 
 run
