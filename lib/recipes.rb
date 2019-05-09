@@ -1,4 +1,4 @@
-class Recipes
+class Recipes < ActiveRecord::Base
       # user, tweet
     attr_accessor :user_name, :drinks
 

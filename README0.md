@@ -1,4 +1,4 @@
-#Module One Final Project
+#Mod One Final Project
 ========================
   _____           _    _        _ _      _
  / ____|         | |  | |      (_) |    {_}
@@ -14,26 +14,15 @@
                            __/ |
                           |___/
 
-##Welcome to the Cocktail Listing!
-We are going to gets some drinks going to please select from the options available below...
+#Welcome to the Cocktail Listing Project!
+We are going to gets some drinks going to please select
+from the options available below to get started...
 
-## Goals (Minimum Requirements)
+Cocktails are sourced from the Cocktail Database: http://www.thecocktaildb.com/api.php
 
-To build a **Command Line CRUD App** that uses a database to persist information.
-The goal of which is to demonstrate all of the skills learned in module one:
-
-- Ruby
-- Object Orientation
-- Relationships (via ActiveRecord)
-- Problem Solving (via creating a Command Line Interface (CLI))
-
-**minimum requirements** for this project are to build a Command Line App that:
-
-1. Contains at least three models with corresponding tables, including a join table.
-2. Accesses a Sqlite3 database using ActiveRecord.
-3. Has a CLI that allows users to interact with your database as defined by your _user stories_ (minimum of four; one for each CRUD action).
-4. Uses good OO design patterns. You should have separate models for your runner and CLI interface.
+##Use
 
 
+Follow Tiki's directions to select a liquor, and drink of choice.
 
-0
+You will receive a recipe to make your drink.

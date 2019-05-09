@@ -29,14 +29,14 @@ def welcome
 
 Welcome to the Cocktail Listing!
 We are going to gets some drinks going so please select from
-the options available below to get a drink going...
+the options available below to get started...
 .......
     DOC
 end
 
 ## ========== USER MAIN MENU DISPLAY ========== ##
 def option
-  puts "\#1. Search for drink based on liquor type."
+  puts "\#1. Search for drink based on a specific ingredient."
   puts "\#2. Take a chance on a random drink."
   puts "\#3. Get the recipe when you know the name of the drink already."
   puts ""
@@ -51,29 +51,34 @@ def option
   when 1
     #will accept a liqupr type and display the available drinks to make
     #where the user can accept one to see the ingredients
-    puts "Input Liquor type:"
+    puts "Input ingredient type:"
     liquor_type = gets.chomp
-    gets_drink_by_liquor(liquor_type)
-    puts " "
-    option
-    puts ""
+    drinks_list = search_by_name(liquor_type)
+    drinks_list.each do|drink|
+        drink.map do |key, value|
+          if key == 'strDrink'
+            print "#{value}, "
+          end
+        end
+    end
+    choose_again
 
   when 2
-    puts "You random drink is the..."
+    # puts "Your random drink is the..."
     random_drink
     # puts "Save drink?"
     # User.like_drink(randomdrink)
-    puts ""
-    option
-    puts ""
+    choose_again
 
   when 3
     puts "Know the name of the drink you want?"
-    drink_name = gets.chomp
+    drink_name = gets.chomp.to_s
+    getting_recipe(drink_name)
 
+    choose_again
 
   when 0 || 'exit'
-    puts "Maybe next time, friend."
+    puts "Maybe next time, friend. Bye-bye"
 
   else
     puts "\n\n!!! Sorry but that appears to be an invalid input. Please try again!!! \n\n"
@@ -81,14 +86,17 @@ def option
   end
 end
 
-#
-# def save_drinks_to_user(user_name)
-#   user_name = User.new(user_name)
-#   puts "Thanks, #{user_name}"
-#
-# # binding.pry
-#
-# end
+def choose_again
+  puts "Care to choose again? (y or n)"
+  yesno = gets.chomp.to_s
+
+  if yesno == 'y' || yesno.downcase == "yes"
+    option
+  else
+    puts "Farewell"
+  end
+
+end
 
 #displays info on a random drink
 def random_drink
@@ -104,33 +112,16 @@ def random_drink
     drink_data = get_json("https://www.thecocktaildb.com/api/json/v1/1/random.php")['drinks'].each {|drink, ingr|ingr}.map {|name| name.values}
 
     drink_name  = drink_data[0][1]
-    drink_type  = drink_data[0][21...28].each do |data|
-       if data != nil || data != ""
-        data
-      end
-data
-    end
-    "Your drink is #{drink_name} and is made from #{drink_type}"
+    drink_type  = drink_data[0][21...35]
+    drink_type = drink_type.reject do |data|
+        data.empty?
+    end.join(", ")
+    "Your drink is a '#{drink_name}' and it is made from #{drink_type}"
+    # "It is #{drink_type}"
   # drink_listing
   end
   puts get_ingredient
   #option to save it to a list???
 end
-
-def gets_drink_by_liquor(liquor_type)
-  drinks_list = search_by_name(liquor_type)
-  drinks_list.each do|drink|
-      drink.map do |key, value|
-        if key == 'strDrink'
-          print "#{value}, "
-        end
-      end
-  end
-end
-
-# def gets_drink_by_name(drink_name)
-#   getting_recipe(drink_name)
-#
-# end
 
 run
