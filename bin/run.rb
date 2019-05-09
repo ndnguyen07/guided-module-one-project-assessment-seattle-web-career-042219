@@ -57,12 +57,12 @@ def option
     # get_ingredient
 
   when 2
-    puts "You random drink is the..."
+    puts "====="#{}You random drink is the..."
     random_drink
     # puts "Save drink?"
     # User.like_drink(randomdrink)
-    puts ""
-    # option
+    puts "====="
+    option
     puts ""
   when 3
     puts "Know the name of the drink you want?"
@@ -88,7 +88,7 @@ end
 #
 # end
 
-#displays info on a random drink
+#displays info on a random drink to the user and its ingredients
 def random_drink
   # result = open("https://www.thecocktaildb.com/api/json/v1/1/random.php")
 
@@ -102,16 +102,11 @@ def random_drink
     drink_data = get_json("https://www.thecocktaildb.com/api/json/v1/1/random.php")['drinks'].each {|drink, ingr|ingr}.map {|name| name.values}
 
     drink_name  = drink_data[0][1]
-    drink_type  = drink_data[0][21...28].each do |data|
-       if data != nil || data != ""
-        # drink_listing.push(item)#item
-        data
-      end
-data
-    end
-    "Your drink is #{drink_name} and is made from #{drink_type}"
-    # "It is #{drink_type}"
-  # drink_listing
+    drink_type  = drink_data[0][21...35]
+    drink_type = drink_type.reject do |data|
+        data.empty?
+    end.join(", ")
+    "Your drink is a '#{drink_name}' and it is made from #{drink_type}"
   end
   puts get_ingredient
   #option to save it to a list???
