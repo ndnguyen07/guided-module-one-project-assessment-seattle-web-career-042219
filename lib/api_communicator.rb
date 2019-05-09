@@ -33,15 +33,12 @@ def getting_recipe(drink_name)
 
   ingredients = []
   measurments = []
-<<<<<<< HEAD
   instructions = info['strInstructions']
 
   ingredients + measurments
-=======
   instructions = []
-  
+
   instructions << info["strInstructions"].gsub(/\r\n?/, "");
->>>>>>> refs/remotes/origin/master
 
   info.each {|group,spec|
     if group.include?("Ingredient")
@@ -52,14 +49,11 @@ def getting_recipe(drink_name)
       measurments << spec
     end
   }
-<<<<<<< HEAD
   return print "ingredients: #{ingredients.join(', ')}\nmeasurments: #{measurments.join(', ')}\ninstructions: #{instructions}"
 end
 
 # print getting_recipe("margarita")
-=======
   puts "Ingredients: #{ingredients}"
   puts "Measurments: #{measurments}"
   puts "Instructions: #{instructions}"
 end
->>>>>>> refs/remotes/origin/master
