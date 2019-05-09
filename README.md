@@ -1,4 +1,4 @@
-#Mod One Final Project
+# Mod One Final Project
 ========================
 ```
   _____           _    _        _ _      _
@@ -28,25 +28,25 @@ To run this app run 'ruby bin/run.rb' from command line folder to receive
 Select an ingredient type, a random drink, and drink of choice if you know the
 name to see the ingredients needed to make it.
 
-##Features
+## Features
 These are the key features and functionality built into the program:
 
 - Search for drink by ingredient
 - Search for a random drink name and its ingredients
 - Search for drink ingredients and instructions to make based on its name
 
-##Demo
+## Demo
 <!-- You can see a video demo of our program at the directory below
 app/assets/demo/mod1_project_demo.mov -->
 
-##Next Steps
+## Next Steps
  User Profile page showing statistics
 List of start dates for user's favorite shows
 Which network does a user favorite the most?
 What shows are most favorited?
 Upload profile pic and convert to ASCII art
 
-##Credits
+## Credits
 A project by DaNeil Coulthard and Dang Nguyen
 
 Welcome Page TV ASCII art taken from: http://patorjk.com
