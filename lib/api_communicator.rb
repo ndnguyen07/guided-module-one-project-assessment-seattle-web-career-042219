@@ -48,7 +48,5 @@ def getting_recipe(drink_name)
   }
   puts "Ingredients: #{ingredients}"
   puts "Measurments: #{measurments}"
-  puts "Instructions: #{instructions}".strip.chomp
+  puts "Instructions: #{instructions}"
 end
-
-print getting_recipe("margarita")
