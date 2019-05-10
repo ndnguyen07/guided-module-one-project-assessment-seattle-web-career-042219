@@ -27,14 +27,17 @@ end
 
 def getting_recipe(drink_name)
   result = open("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=#{drink_name}")
-  
+
   info = JSON.load(result)['drinks'].first.reject {|bev,comp|
   comp == "" || comp == " " || comp == nil}
 
   ingredients = []
   measurments = []
+  instructions = info['strInstructions']
+
+  ingredients + measurments
   instructions = []
-  
+
   instructions << info["strInstructions"].gsub(/\r\n?/, "");
 
   info.each {|group,spec|
@@ -46,6 +49,10 @@ def getting_recipe(drink_name)
       measurments << spec
     end
   }
+  return print "ingredients: #{ingredients.join(', ')}\nmeasurments: #{measurments.join(', ')}\ninstructions: #{instructions}"
+end
+
+# print getting_recipe("margarita")
   puts "Ingredients: #{ingredients}"
   puts "Measurments: #{measurments}"
   puts "Instructions: #{instructions}"
