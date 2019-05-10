@@ -12,7 +12,7 @@ def get_json(url)
 end
 
 def get_ingredient
-  get_json("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")['drinks'].each {|drink, ingr|ingr}.map {|name| name.values}
+  get_json("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")['drinks'].each {|drink, ingr|ingr}.map {|name| name.values}.join(",").split(",")
 end
 
 def search_by_name(name)

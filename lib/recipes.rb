@@ -1,16 +1,3 @@
-class Recipes
-      # user, tweet
-    attr_accessor :user_name, :drinks
-
-    @@all = []
-
-    def initialize(user_name, drinks)
-      @user_name = user_name
-      @drinks = drinks
-      @@all << self
-    end
-
-    def self.all
-      @@all
-    end
-  end
+class Recipes < ActiveRecord::Base
+  has_and_belongs_to_many :ingredients
+end
